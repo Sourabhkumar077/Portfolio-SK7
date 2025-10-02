@@ -4,6 +4,7 @@ import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
+// import { ToastProvider } from "@/hooks/use-toast"; // Removed because it's not exported
 
 export const metadata: Metadata = {
   title: "Portfolio | Web Developer & Software Engineer",
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        {/* Removed ToastProvider because it's not exported */}
         <ErrorReporter />
         <Script
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts//route-messenger.js"
