@@ -30,16 +30,18 @@ export default function Home() {
   const techStackTitleRef = useRef<HTMLHeadingElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      if (cursorRef.current) {
+        cursorRef.current.style.background = `radial-gradient(600px at ${e.clientX}px ${e.clientY}px, rgba(29,78,216,0.15), transparent 80%)`;
+      }
     };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
+
 
   useEffect(() => {
     // Hero animations
@@ -179,10 +181,11 @@ export default function Home() {
 
         {/* Cursor follower effect */}
         <div
+          ref={cursorRef}
           className="pointer-events-none fixed inset-0 z-30 transition duration-1000"
-          style={{
-            background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
-          }}
+          // style={{
+          //   background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
+          // }}
         />
 
         <div
@@ -209,7 +212,7 @@ export default function Home() {
             </span>
             <br />
             <span className="inline-block text-foreground/80">
-            
+
             </span>
 
             {/* Decorative elements */}
