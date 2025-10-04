@@ -10,6 +10,9 @@ import { ArrowRight, Code, GraduationCap, Laptop, Sparkles, Rocket, Zap } from "
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef, useEffect, useState } from "react";
+import BeyondCode from "@/components/BeyondCode";
+import TechJourney from "@/components/TechJourney";
+import ProblemSolvingShowcase from "@/components/ProblemSolvingShowcase";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,12 +107,13 @@ export default function Home() {
       gsap.to(particle, {
         opacity: 1,
         scale: 1,
-        x: Math.random() * 100 - 50,
+        // Remove horizontal movement to avoid clash with cursor effect
+        // x: Math.random() * 100 - 50,
         y: -100,
-        duration: 3,
+        duration: 6, // slower duration for smoother movement
         repeat: -1,
-        delay: i * 0.2,
-        ease: "power2.out",
+        delay: i * 0.4,
+        ease: "power2.inOut",
         yoyo: true
       });
     });
@@ -175,7 +179,7 @@ export default function Home() {
 
         {/* Cursor follower effect */}
         <div
-          className="pointer-events-none fixed inset-0 z-30 transition duration-300"
+          className="pointer-events-none fixed inset-0 z-30 transition duration-1000"
           style={{
             background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
           }}
