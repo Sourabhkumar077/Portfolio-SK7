@@ -13,6 +13,7 @@ import { useRef, useEffect, useState } from "react";
 import BeyondCode from "@/components/BeyondCode";
 import TechJourney from "@/components/TechJourney";
 import ProblemSolvingShowcase from "@/components/ProblemSolvingShowcase";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -153,39 +154,18 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden" ref={containerRef}>
+    <div className="relative flex flex-col min-h-screen overflow-hidden" ref={containerRef}>
       <Header />
+      <AnimatedBackground/>
 
       {/* Hero Section with GSAP Animations */}
       <section className="relative flex-1 container mx-auto px-4 lg:px-8 py-20 md:py-32 overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 -z-10">
-          <div className="gradient-orb w-96 h-96 bg-gradient-to-r from-primary/30 to-purple-500/30 top-0 -left-48 rounded-full blur-3xl opacity-30" />
-          <div className="gradient-orb w-96 h-96 bg-gradient-to-r from-blue-500/30 to-primary/30 bottom-0 -right-48 rounded-full blur-3xl opacity-30" />
-
-          {/* Floating particles */}
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="floating-particle absolute w-2 h-2 bg-primary/20 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-            />
-          ))}
-
-          {/* Grid overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
-        </div>
-
+       
         {/* Cursor follower effect */}
         <div
           ref={cursorRef}
           className="pointer-events-none fixed inset-0 z-30 transition duration-1000"
-          // style={{
-          //   background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
-          // }}
+         
         />
 
         <div
@@ -256,7 +236,7 @@ export default function Home() {
       </section>
 
       {/* What I Do Section with GSAP Card Effects */}
-      <section className="bg-muted/30 py-20 relative overflow-hidden" ref={whatIDoRef}>
+      <section className=" py-20 relative overflow-hidden" ref={whatIDoRef}>
         <div className="container mx-auto px-4 lg:px-8">
           <h2
             className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent"
@@ -313,25 +293,7 @@ export default function Home() {
 
       {/* Tech Stack Section with GSAP Animated Badges */}
       <section className="py-20 relative overflow-hidden" ref={techStackRef}>
-        <div className="absolute inset-0 -z-10">
-          <div className="gradient-orb w-96 h-96 bg-gradient-to-r from-primary/30 to-purple-500/30 top-0 -left-48 rounded-full blur-3xl opacity-30" />
-          <div className="gradient-orb w-96 h-96 bg-gradient-to-r from-blue-500/30 to-primary/30 bottom-0 -right-48 rounded-full blur-3xl opacity-30" />
-
-          {/* Floating particles */}
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="floating-particle absolute w-2 h-2 bg-primary/20 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-            />
-          ))}
-
-          {/* Grid overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
-        </div>
+       
         <div className="container mx-auto px-4 lg:px-8">
           <h2
             className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent"
