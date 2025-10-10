@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Lightbulb, Wrench, TrendingUp, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 
+
 const caseStudies = [
   {
     problem: "Mental health apps lacked personalization.",
@@ -31,7 +32,7 @@ export default function ProblemSolvingShowcase() {
   };
 
   return (
-    <section className="py-20 bg-muted/30 relative overflow-hidden">
+    <section className="py-20  relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
@@ -107,6 +108,7 @@ export default function ProblemSolvingShowcase() {
           </div>
         </div>
 
+       
         {/* Footer */}
         <div className="text-center mt-12">
           <p className="text-muted-foreground italic">

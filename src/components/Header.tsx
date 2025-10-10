@@ -23,16 +23,19 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full  ">
+      
       <nav className="container mx-auto px-4 lg:px-8">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             {/* <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-lg">
               SK
             </div> */}
-            <span className="hidden font-bold sm:inline-block text-xl">
-              Sourabh Kumar
+            <span className="hidden font-bold sm:inline-block text-xl mt-2">
+              {/* Sourabh Kumar */}
+              <img src="/Logo.png" alt="logo image"  />
             </span>
           </Link>
 

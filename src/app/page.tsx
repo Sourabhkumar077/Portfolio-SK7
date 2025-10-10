@@ -9,13 +9,15 @@ import Footer from "@/components/Footer";
 import { ArrowRight, Code, GraduationCap, Laptop, Sparkles, Rocket, Zap } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollSmoother from "gsap/ScrollSmoother";
 import { useRef, useEffect, useState } from "react";
 import BeyondCode from "@/components/BeyondCode";
 import TechJourney from "@/components/TechJourney";
 import ProblemSolvingShowcase from "@/components/ProblemSolvingShowcase";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -154,18 +156,20 @@ export default function Home() {
   }, []);
 
   return (
+
+
     <div className="relative flex flex-col min-h-screen overflow-hidden" ref={containerRef}>
       <Header />
-      <AnimatedBackground/>
+      <AnimatedBackground />
 
       {/* Hero Section with GSAP Animations */}
       <section className="relative flex-1 container mx-auto px-4 lg:px-8 py-20 md:py-32 overflow-hidden">
-       
+
         {/* Cursor follower effect */}
         <div
           ref={cursorRef}
           className="pointer-events-none fixed inset-0 z-30 transition duration-1000"
-         
+
         />
 
         <div
@@ -293,7 +297,7 @@ export default function Home() {
 
       {/* Tech Stack Section with GSAP Animated Badges */}
       <section className="py-20 relative overflow-hidden" ref={techStackRef}>
-       
+
         <div className="container mx-auto px-4 lg:px-8">
           <h2
             className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent"
@@ -304,6 +308,7 @@ export default function Home() {
 
           <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto" ref={skillsRef}>
             {[
+
               "JavaScript",
               "TypeScript",
               "React",
@@ -330,9 +335,10 @@ export default function Home() {
           {/* Animated stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mt-20" ref={statsRef}>
             {[
+
               { icon: Rocket, label: "Projects", value: "20+" },
               { icon: Code, label: "Languages", value: "10+" },
-              { icon: Zap, label: "Experience", value: "3+ Years" },
+              { icon: Zap, label: "Experience", value: "1+ Years" },
               { icon: Sparkles, label: "Happy Clients", value: "15+" },
             ].map((stat, index) => (
               <div key={index} className="text-center group">
@@ -347,6 +353,11 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Add ProblemSolvingShowcase here */}
+      <section>
+        <ProblemSolvingShowcase />
       </section>
 
       <Footer />
