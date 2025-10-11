@@ -94,7 +94,7 @@ export default function Header() {
               </Link>
             ))}
             <Button size="sm" className="w-full" asChild>
-              <a href="/resume.pdf" download>
+              <a href="/SKM-PersonalResume.pdf" download>
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
               </a>

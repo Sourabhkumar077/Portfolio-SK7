@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 const projects = [
   {
@@ -109,6 +110,7 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <div className="flex flex-col min-h-screen">
+      <AnimatedBackground/>
       <main className="flex-1 container mx-auto px-4 lg:px-8 py-20">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
