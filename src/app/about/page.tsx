@@ -45,10 +45,16 @@ const achievements = [
     description: "Actively contributed to multiple open-source projects, improving codebases and collaborating with developers worldwide.",
     icon: Code2,
   },
+ 
   {
-    title: "Research Assistant",
-    description: "Assisted in a machine learning research project, contributing to data analysis, model building, and practical experimentation.",
-    icon: BookOpen,
+    title: "Head Coordinator - BGI TIMEPLAPSE 2024",
+    description: "Led and coordinated the BGI TIMEPLAPSE event, managing teams and ensuring smooth execution.",
+    icon: Award,
+  },
+  {
+    title: "Technical Lead - Bansalotsav 2025",
+    description: "Served as the technical lead for the institute’s annual fest, overseeing technical setups, events, and team coordination.",
+    icon: Code2,
   },
 ];
 

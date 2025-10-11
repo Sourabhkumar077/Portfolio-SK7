@@ -30,13 +30,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            {/* <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-lg">
-              SK
-            </div> */}
-            <span className="hidden font-bold sm:inline-block text-xl mt-2">
-              {/* Sourabh Kumar */}
-              <img src="/Logo.png" alt="logo image"  />
-            </span>
+            <img src="/Logo.png" alt="logo image"  />    
           </Link>
 
           {/* Desktop Navigation */}
@@ -55,7 +49,7 @@ export default function Header() {
               </Link>
             ))}
             <Button size="sm" asChild>
-              <a href="/resume.pdf" download>
+              <a href="/SKM-PersonalResume.pdf" download>
                 <Download className="mr-2 h-4 w-4" />
                 Resume
               </a>
