@@ -133,7 +133,7 @@ export default function ProjectsPage() {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="group"
               >
-                <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group-hover:scale-105 relative">
+                <Card className="overflow-hidden hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 group-hover:scale-105 group-hover:-rotate-1 relative bg-gradient-to-br from-card to-card/95 border border-border/50">
                   <div className="relative h-48 w-full overflow-hidden">
                     <Image
                       src={project.image}
