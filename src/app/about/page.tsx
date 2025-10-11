@@ -1,11 +1,11 @@
 "use client";
 
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Award, BookOpen, Code2, Trophy } from "lucide-react";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 const skills = [
   { name: "JavaScript/TypeScript", level: 90 },
@@ -20,48 +20,50 @@ const skills = [
 
 const education = [
   {
-    degree: "Bachelor of Science in Computer Science",
-    school: "University Name",
-    period: "2021 - 2025",
-    description: "Focus on software engineering, data structures, algorithms, and web development.",
-    gpa: "3.8/4.0",
+    degree: "Bachelor of Technology in Computer Science & Engineering",
+    school: "RGPV University, Bhopal, Madhya Pradesh",
+    period: "2022 - 2026",
+    description:
+      "Focused on software engineering principles, data structures and algorithms, database management, and full-stack web development. Completed various academic and personal projects demonstrating practical problem-solving skills.",
+    gpa: "8.40 / 10.0",
   },
 ];
 
 const achievements = [
   {
     title: "Dean's List",
-    description: "Maintained high academic standing for multiple semesters",
+    description: "Consistently maintained top academic performance across multiple semesters, demonstrating discipline and a commitment to excellence.",
     icon: Trophy,
   },
   {
     title: "Hackathon Winner",
-    description: "First place in university coding competition",
+    description: "Secured first place in a university-level coding hackathon by building innovative, practical solutions under tight deadlines.",
     icon: Award,
   },
   {
     title: "Open Source Contributor",
-    description: "Active contributor to several open source projects",
+    description: "Actively contributed to multiple open-source projects, improving codebases and collaborating with developers worldwide.",
     icon: Code2,
   },
   {
     title: "Research Assistant",
-    description: "Assisted in machine learning research project",
+    description: "Assisted in a machine learning research project, contributing to data analysis, model building, and practical experimentation.",
     icon: BookOpen,
   },
 ];
 
+
 export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
-      
+
       <main className="flex-1 container mx-auto px-4 lg:px-8 py-20">
+        <AnimatedBackground />
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">About Me</h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl ">
               Learn more about my background, skills, and journey in tech
             </p>
           </div>
@@ -72,21 +74,18 @@ export default function AboutPage() {
               <CardTitle>Hello! 👋</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 text-muted-foreground">
+              <p>I’m <b>Sourabh Kumar</b> — a calm hustler, a curious mind, and a builder who believes growth isn’t a destination, it’s a daily practice.</p>
               <p>
-                I'm a passionate Computer Science student and aspiring software engineer
-                with a strong foundation in web development and software engineering principles.
-                My journey in tech started with curiosity about how websites work, and it has
-                evolved into a deep passion for creating impactful digital solutions.
-              </p>
-              <p>
-                As a student, I'm constantly learning and applying new concepts, from advanced
-                algorithms to modern web frameworks. I believe in writing clean, maintainable
-                code and building user-centric applications that solve real-world problems.
-              </p>
-              <p>
-                When I'm not coding, you can find me exploring new technologies, contributing
-                to open source projects, or mentoring fellow students in programming fundamentals.
-              </p>
+                <strong>I don’t chase perfection — I chase progress.</strong>
+                Every line of code, every project, every quiet reflection is a step forward in becoming better than yesterday.
+                I find joy in creating meaningful things, learning deeply, and evolving through every experience.
+                Whether it’s building a product or pursuing a personal goal, I show up with consistency, intention, and heart.</p>
+
+              <p>I find joy in creating meaningful things, learning deeply, and evolving through every experience.
+                Whether it’s building a product or pursuing a personal goal, I show up with consistency, intention, and heart.
+                <br />
+                I value <strong>depth over noise, purpose over pressure, and mindset over momentary motivation.</strong> My world revolves around late-night ideas,
+                thoughtful journaling, and the thrill of learning something new every day.</p>
             </CardContent>
           </Card>
 

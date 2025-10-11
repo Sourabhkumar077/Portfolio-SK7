@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowRight, Code, GraduationCap, Laptop, Sparkles, Rocket, Zap } from "lucide-react";
 import { gsap } from "gsap";
@@ -159,7 +158,6 @@ export default function Home() {
 
 
     <div className="relative flex flex-col min-h-screen overflow-hidden" ref={containerRef}>
-      <Header />
       <AnimatedBackground />
 
       {/* Hero Section with GSAP Animations */}
@@ -179,24 +177,25 @@ export default function Home() {
           <div ref={badgeRef}>
             <Badge className="mb-4 px-4 py-2 backdrop-blur-sm bg-primary/10 border-primary/20" variant="secondary">
               <Sparkles className="w-3 h-3 mr-2 inline animate-pulse" />
-              // Available for opportunities
+               Available for opportunities
             </Badge>
           </div>
-
+          
           <h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 relative"
+            className="text-3xl md:text-7xl lg:text-8xl font-bold mb-6 relative"
             ref={titleRef}
           >
+          
             <span className="inline-block bg-gradient-to-r from-primary via-purple-500 to-blue-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
               Web Developer
             </span>
             <br />
             <span className="inline-block bg-gradient-to-r from-blue-500 via-primary to-purple-500 bg-clip-text text-transparent">
-              Software Engineer
+              Full Stack Engineer
             </span>
             <br />
             <span className="inline-block text-foreground/80">
-
+            CSE final year
             </span>
 
             {/* Decorative elements */}

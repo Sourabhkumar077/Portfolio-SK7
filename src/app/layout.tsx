@@ -4,15 +4,13 @@ import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
+import Header from "@/components/Header";
 // import { ToastProvider } from "@/hooks/use-toast"; // Removed because it's not exported
 
 export const metadata: Metadata = {
-  title: "Portfolio | Web Developer & Software Engineer",
+  title: "Sourabh-kumar | Web Developer & Software Engineer",
   description: "Portfolio of a web developer, software engineer, and computer science student passionate about building innovative solutions.",
 };
-import { ScrollSmoother } from "gsap/all";
-import gsap from "gsap/all";
-gsap.registerPlugin(ScrollSmoother);
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,24 +22,21 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className="antialiased">
         {/* Removed ToastProvider because it's not exported */}
-        <div id="smooth-wrapper">
-          <div id="smooth-content">
-            <ErrorReporter />
-            <Script
-              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts//route-messenger.js"
-              strategy="afterInteractive"
-              data-target-origin="*"
-              data-message-type="ROUTE_CHANGE"
-              data-include-search-params="true"
-              data-only-in-iframe="true"
-              data-debug="true"
-              data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
-            />
-            {children}
-            <Toaster />
-            <VisualEditsMessenger />
-          </div>
-        </div>
+        <ErrorReporter />
+        <Header />
+        <Script
+          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts//route-messenger.js"
+          strategy="afterInteractive"
+          data-target-origin="*"
+          data-message-type="ROUTE_CHANGE"
+          data-include-search-params="true"
+          data-only-in-iframe="true"
+          data-debug="true"
+          data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
+        />
+        {children}
+        <Toaster />
+        <VisualEditsMessenger />
       </body>
     </html>
   );

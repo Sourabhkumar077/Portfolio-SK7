@@ -1,33 +1,14 @@
-# TODO: Make Sections Uniquely Designed
+# TODO: Fix Navbar Navigation Issue
 
-## Overview
-Replace common Card components with unique custom layouts for each section to enhance visual appeal and differentiation.
+## Approved Plan
+- Move Header to layout.tsx for shared navigation across pages.
+- Remove Header from individual pages.
+- Clean up unused GSAP smooth wrapper divs in layout.tsx.
 
-## Tasks
-
-### 1. Update "What I Do" Section in page.tsx
-- [ ] Replace the three Card components with a horizontal flow layout
-- [ ] Use large icons with gradient backgrounds
-- [ ] Add animated text overlays
-- [ ] Ensure responsive design
-
-### 2. Update TechJourney Component
-- [ ] Replace Card components in timeline items with custom-shaped containers
-- [ ] Consider speech bubble or angled div styles
-- [ ] Maintain timeline structure and animations
-
-### 3. Update ProblemSolvingShowcase Component
-- [ ] Implement vertical accordion-style layout or step-by-step process visualization
-- [ ] Add connecting lines between steps
-- [ ] Keep the problem-solution-impact structure
-
-### 4. Update BeyondCode Component
-- [ ] Create radial/circular layout for personal points
-- [ ] Position items around a central point
-- [ ] Add hover animations and interactions
-
-## Notes
-- Preserve existing GSAP animations where possible
-- Ensure all layouts are mobile-responsive
-- Maintain accessibility standards
-- Test animations and interactions after changes
+## Steps
+- [x] Add Header import and <Header /> to src/app/layout.tsx inside the smooth-content div.
+- [x] Remove Header import and <Header /> from src/app/page.tsx.
+- [x] Remove Header import and <Header /> from src/app/about/page.tsx.
+- [x] Remove Header import and <Header /> from src/app/projects/page.tsx.
+- [x] Remove Header import and <Header /> from src/app/contact/page.tsx.
+- [x] Remove unused GSAP smooth wrapper divs from src/app/layout.tsx.
