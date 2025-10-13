@@ -14,7 +14,7 @@ export default function Header() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/projects", label: "Projects" },
-    { href: "/contact", label: "Contact" },
+    // { href: "/contact", label: "Contact" },
   ];
 
   const isActive = (href: string) => {
@@ -30,7 +30,9 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <img src="/Logo.png" alt="logo image"  />    
+            <span className="text-2xl font-light text-primary">
+              <i>Sourabh Kumar</i>
+            </span>    
           </Link>
 
           {/* Desktop Navigation */}

@@ -48,10 +48,11 @@ export default function Home() {
   useEffect(() => {
     // Hero animations
     const tl = gsap.timeline();
-    tl.fromTo(badgeRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" })
-      .fromTo(titleRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.6")
-      .fromTo(descRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.6")
-      .fromTo(buttonsRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.6");
+    tl.fromTo(badgeRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 })
+  .fromTo(titleRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
+  .fromTo(descRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
+  .fromTo(buttonsRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3");
+
 
     // Scroll animations
     gsap.fromTo(whatIDoTitleRef.current, { opacity: 0, y: 30 }, {
@@ -64,15 +65,22 @@ export default function Home() {
       }
     });
 
-    gsap.fromTo(cardsRef.current?.children || [], { opacity: 0, y: 50 }, {
-      opacity: 1, y: 0, duration: 0.6, stagger: 0.2, ease: "power2.out",
-      scrollTrigger: {
-        trigger: cardsRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse"
-      }
-    });
+    gsap.fromTo(cardsRef.current?.children || [],
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: cardsRef.current,
+          start: "top 85%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      });
+
 
     gsap.fromTo(techStackTitleRef.current, { opacity: 0, y: 30 }, {
       opacity: 1, y: 0, duration: 0.6, ease: "power2.out",
@@ -107,18 +115,16 @@ export default function Home() {
     // Floating particles animation
     const particles = document.querySelectorAll('.floating-particle');
     particles.forEach((particle, i) => {
-      gsap.set(particle, { opacity: 0, scale: 0 });
+      gsap.set(particle, { opacity: 0, scale: 0, y: 0 });
       gsap.to(particle, {
         opacity: 1,
         scale: 1,
-        // Remove horizontal movement to avoid clash with cursor effect
-        // x: Math.random() * 100 - 50,
-        y: -100,
-        duration: 6, // slower duration for smoother movement
+        y: Math.random() * -200 - 50, // random upward float
+        duration: 6 + Math.random() * 4, // vary speed
         repeat: -1,
-        delay: i * 0.4,
-        ease: "power2.inOut",
-        yoyo: true
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: i * 0.3
       });
     });
 
@@ -126,14 +132,17 @@ export default function Home() {
     const orbs = document.querySelectorAll('.gradient-orb');
     orbs.forEach((orb) => {
       gsap.to(orb, {
-        scale: 1.2,
-        rotate: 90,
-        duration: 8,
+        x: "+=30",
+        y: "-=20",
+        scale: 1.1,
+        rotate: 360,
+        duration: 10 + Math.random() * 5,
         repeat: -1,
-        ease: "power2.inOut",
+        ease: "sine.inOut",
         yoyo: true
       });
     });
+
 
     // Scroll indicator animation
     const scrollIndicator = document.querySelector('.scroll-indicator');
@@ -162,7 +171,6 @@ export default function Home() {
 
       {/* Hero Section with GSAP Animations */}
       <section className="relative flex-1 container mx-auto px-4 lg:px-8 py-20 md:py-32 overflow-hidden">
-
         {/* Cursor follower effect */}
         <div
           ref={cursorRef}
@@ -177,38 +185,29 @@ export default function Home() {
           <div ref={badgeRef}>
             <Badge className="mb-4 px-4 py-2 backdrop-blur-sm bg-primary/10 border-primary/20" variant="secondary">
               <Sparkles className="w-3 h-3 mr-2 inline animate-pulse" />
-               Available for opportunities
+              Available for opportunities
             </Badge>
           </div>
-          
+
           <h1
             className="text-3xl md:text-7xl lg:text-8xl font-bold mb-6 relative"
             ref={titleRef}
           >
-          
-            <span className="inline-block bg-gradient-to-r from-primary via-purple-500 to-blue-500 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
-              Web Developer
-            </span>
-            <br />
-            <span className="inline-block bg-gradient-to-r from-blue-500 via-primary to-purple-500 bg-clip-text text-transparent">
-              Full Stack Engineer
-            </span>
-            <br />
-            <span className="inline-block text-foreground/80">
-            CSE final year
+            <span className="inline-block text-[19px] md:text-3xl lg:text-5xl font-light text-muted-foreground ">
+              <i> Hi I'm  Sourabh </i>
             </span>
 
-            {/* Decorative elements */}
-            <div className="absolute -top-8 -right-8 w-16 h-16 bg-primary/20 rounded-full blur-xl animate-pulse" />
           </h1>
-
+          <span className="inline-block text-2xl md:text-5xl lg:text-7xl font-bold text-foreground tracking-tight leading-tight">
+            A FULL-STACK DEVELOPER
+            <span className=" block font-light text-[20px] text-muted-foreground ">and</span>
+            PRODUCT DESIGNER
+          </span>
           <p
             className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed"
             ref={descRef}
           >
-            Passionate about creating innovative digital solutions and learning
-            cutting-edge technologies. Currently pursuing Computer Science while
-            building real-world projects.
+            <i> Building digital experiences that blend logic, design, and emotion.</i>
           </p>
 
           <div
