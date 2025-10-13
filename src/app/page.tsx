@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
-import { ArrowRight, Code, GraduationCap, Laptop, Sparkles, Rocket, Zap } from "lucide-react";
+import { ArrowRight, Code, GraduationCap, Laptop, Sparkles, Rocket, Zap, Phone } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollSmoother from "gsap/ScrollSmoother";
@@ -49,9 +49,9 @@ export default function Home() {
     // Hero animations
     const tl = gsap.timeline();
     tl.fromTo(badgeRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 })
-  .fromTo(titleRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
-  .fromTo(descRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
-  .fromTo(buttonsRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3");
+      .fromTo(titleRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
+      .fromTo(descRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
+      .fromTo(buttonsRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3");
 
 
     // Scroll animations
@@ -252,20 +252,38 @@ export default function Home() {
               {
                 icon: Code,
                 title: "Web Development",
-                description: "Building responsive, modern web applications using React, Next.js, and TypeScript with focus on user experience and performance.",
+                description: "Modern, responsive web applications using React, Next.js, and TypeScript.",
                 gradient: "from-blue-500/20 to-cyan-500/20",
               },
               {
                 icon: Laptop,
-                title: "Software Engineering",
-                description: "Developing scalable software solutions with clean code architecture, implementing algorithms, and working with various tech stacks.",
+                title: "Backend & APIs",
+                description: "Building scalable backend solutions with Node.js, Express, MongoDB/PostgreSQL.",
                 gradient: "from-purple-500/20 to-pink-500/20",
               },
               {
                 icon: GraduationCap,
-                title: "Continuous Learning",
-                description: "Currently pursuing Computer Science degree, constantly learning new technologies, and staying updated with industry trends.",
+                title: "UI/UX & Product Design",
+                description: "Intuitive interfaces and prototypes using Figma & Tailwind CSS.",
                 gradient: "from-orange-500/20 to-red-500/20",
+              },
+              {
+                icon: Rocket,
+                title: "Automation & DevOps",
+                description: "CI/CD, cloud deployment, and workflow automation for efficient development.",
+                gradient: "from-green-500/20 to-teal-500/20",
+              },
+              {
+                icon: Phone,
+                title: "Mobile & PWA",
+                description: "Cross-platform apps with React Native and Progressive Web Apps.",
+                gradient: "from-yellow-400/20 to-orange-400/20",
+              },
+              {
+                icon: Zap,
+                title: "Consulting & Mentoring",
+                description: "Technical guidance, code reviews, and mentorship for developers or startups.",
+                gradient: "from-pink-500/20 to-purple-500/20",
               },
             ].map((item, index) => (
               <Card key={index} className="group relative overflow-hidden border-primary/10 bg-card/50 backdrop-blur-sm h-full hover:border-primary/30 transition-all duration-300 hover:-translate-y-2">
@@ -356,6 +374,11 @@ export default function Home() {
       {/* Add ProblemSolvingShowcase here */}
       <section>
         <ProblemSolvingShowcase />
+      </section>
+
+      {/* Add BeyondCode here */}
+      <section>
+        <BeyondCode />
       </section>
 
       <Footer />

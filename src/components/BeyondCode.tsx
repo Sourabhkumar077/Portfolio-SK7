@@ -28,18 +28,20 @@ export default function BeyondCode() {
     <section className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
-            🌍 Beyond Code
+          <h2 className="x text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
+             Beyond Code
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Showcase personality and interests outside coding.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto ">
+            <i>Showcasing my  personality and interests outside coding.</i>
           </p>
         </div>
+        <br />
+        <br />
 
         <div className="relative max-w-4xl mx-auto h-96 md:h-[500px]">
           {/* Central hub */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary/20">
+            <div className="w-24 h-34 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary/20">
               <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full flex items-center justify-center">
                 <span className="text-2xl">🌟</span>
               </div>
@@ -62,7 +64,7 @@ export default function BeyondCode() {
                   transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
                 }}
               >
-                <div className="bg-card/50 backdrop-blur-sm border border-primary/10 rounded-lg p-4 w-48 text-center hover:border-primary/30 transition-all duration-300 hover:scale-105 shadow-lg">
+                <div className="bg-card/20 backdrop-blur-sm border  rounded-lg p-4 w-48 text-center hover:border-primary/30 transition-all duration-300 hover:scale-105 shadow-lg">
                   <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
                     <point.icon className="h-6 w-6 text-primary" />
                   </div>
@@ -103,9 +105,9 @@ export default function BeyondCode() {
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-4">
           <p className="text-muted-foreground italic">
-            👉 At the end of the day, code is my tool — but impact is my goal.
+             At the end of the day, code is my tool — but impact is my goal.
           </p>
         </div>
       </div>
