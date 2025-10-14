@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
-import { ArrowRight, Code, GraduationCap, Laptop, Sparkles, Rocket, Zap, Phone } from "lucide-react";
+import { ArrowRight, Code, GraduationCap, Laptop, Sparkles, Rocket, Zap, Phone, Database, Server, Palette, GitBranch, Cpu, Globe } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollSmoother from "gsap/ScrollSmoother";
@@ -165,7 +165,6 @@ export default function Home() {
 
   return (
 
-
     <div className="relative flex flex-col min-h-screen overflow-hidden" ref={containerRef}>
       <AnimatedBackground />
 
@@ -182,18 +181,13 @@ export default function Home() {
           className="max-w-4xl mx-auto text-center relative z-10"
           ref={heroRef}
         >
-          <div ref={badgeRef}>
-            <Badge className="mb-4 px-4 py-2 backdrop-blur-sm bg-primary/10 border-primary/20" variant="secondary">
-              <Sparkles className="w-3 h-3 mr-2 inline animate-pulse" />
-              Available for opportunities
-            </Badge>
-          </div>
+        
 
           <h1
-            className="text-3xl md:text-7xl lg:text-8xl font-bold mb-6 relative"
+            className="text-3xl md:text-7xl lg:text-4xl font-bold mb-6 relative"
             ref={titleRef}
           >
-            <span className="inline-block text-[19px] md:text-3xl lg:text-5xl font-light text-muted-foreground ">
+            <span className="inline-block text-[16px] md:text-2xl lg:text-5xl font-light text-muted-foreground ">
               <i> Hi I'm  Sourabh </i>
             </span>
 
@@ -230,11 +224,10 @@ export default function Home() {
 
           {/* Scroll indicator */}
           <div className="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-0">
-            <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
-              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 animate-bounce" />
-            </div>
+            
           </div>
         </div>
+        
       </section>
 
       {/* What I Do Section with GSAP Card Effects */}
@@ -322,29 +315,37 @@ export default function Home() {
             Tech Stack
           </h2>
 
-          <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto" ref={skillsRef}>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center max-w-5xl mx-auto" ref={skillsRef}>
             {[
-
-              "JavaScript",
-              "TypeScript",
-              "React",
-              "Next.js",
-              "Node.js",
-              "Python",
-              "Java",
-              "Git",
-              "Tailwind CSS",
-              "SQL",
-              "MongoDB",
-              "REST APIs",
-            ].map((skill) => (
-              <Badge
-                key={skill}
-                variant="secondary"
-                className="px-5 py-2.5 text-sm font-medium backdrop-blur-sm bg-secondary/50 hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-all duration-300 cursor-pointer hover:scale-110"
+              { name: "JavaScript", icon: Code, color: "from-yellow-400 to-yellow-600" },
+              { name: "TypeScript", icon: Cpu, color: "from-blue-400 to-blue-600" },
+              { name: "React", icon: Zap, color: "from-cyan-400 to-cyan-600" },
+              { name: "Next.js", icon: Rocket, color: "from-gray-400 to-gray-600" },
+              { name: "Node.js", icon: Server, color: "from-green-400 to-green-600" },
+              { name: "Python", icon: Code, color: "from-blue-500 to-blue-700" },
+              { name: "Java", icon: Cpu, color: "from-red-400 to-red-600" },
+              { name: "Git", icon: GitBranch, color: "from-orange-400 to-orange-600" },
+              { name: "Tailwind CSS", icon: Palette, color: "from-teal-400 to-teal-600" },
+              { name: "SQL", icon: Database, color: "from-purple-400 to-purple-600" },
+              { name: "MongoDB", icon: Database, color: "from-green-500 to-green-700" },
+              { name: "REST APIs", icon: Globe, color: "from-indigo-400 to-indigo-600" },
+            ].map((skill, index) => (
+              <div
+                key={skill.name}
+                className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:scale-105 hover:-translate-y-1 cursor-pointer shadow-lg hover:shadow-xl"
               >
-                {skill}
-              </Badge>
+                <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                <div className="relative p-6 flex flex-col items-center text-center">
+                  <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 group-hover:rotate-12">
+                    <skill.icon className="h-6 w-6 text-primary group-hover:text-primary group-hover:drop-shadow-[0_0_8px_rgba(var(--primary),0.5)]" />
+                  </div>
+                  <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                    {skill.name}
+                  </span>
+                </div>
+                {/* Animated corner accent */}
+                <div className="absolute top-0 right-0 w-8 h-8 bg-primary/10 rounded-bl-full scale-0 group-hover:scale-100 transition-transform duration-300" />
+              </div>
             ))}
           </div>
 

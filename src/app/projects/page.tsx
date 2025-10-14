@@ -74,22 +74,22 @@ const projects = [
   demo: "https://demo.example.com",
 },
 
-  {
-    title: "Weather Dashboard",
-    description: "Real-time weather application displaying current conditions, forecasts, and interactive maps using external APIs.",
-    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop",
-    tags: ["React", "API Integration", "Chart.js", "Tailwind CSS"],
-    github: "https://github.com",
-    demo: "https://demo.example.com",
-  },
-  {
-    title: "Portfolio CMS",
-    description: "Content management system for portfolios with markdown support, image optimization, and SEO features.",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop",
-    tags: ["Next.js", "Sanity CMS", "TypeScript", "Vercel"],
-    github: "https://github.com",
-    demo: "https://demo.example.com",
-  },
+  // {
+  //   title: "Weather Dashboard",
+  //   description: "Real-time weather application displaying current conditions, forecasts, and interactive maps using external APIs.",
+  //   image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop",
+  //   tags: ["React", "API Integration", "Chart.js", "Tailwind CSS"],
+  //   github: "https://github.com",
+  //   demo: "https://demo.example.com",
+  // },
+  // {
+  //   title: "Portfolio CMS",
+  //   description: "Content management system for portfolios with markdown support, image optimization, and SEO features.",
+  //   image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop",
+  //   tags: ["Next.js", "Sanity CMS", "TypeScript", "Vercel"],
+  //   github: "https://github.com",
+  //   demo: "https://demo.example.com",
+  // },
   // {
   //   title: "Algorithm Visualizer",
   //   description: "Interactive tool for visualizing sorting and pathfinding algorithms with step-by-step animations and explanations.",

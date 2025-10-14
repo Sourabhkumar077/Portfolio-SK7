@@ -21,7 +21,6 @@ export default function RootLayout({
 
     <html lang="en" className="dark">
       <body className="antialiased">
-        {/* Removed ToastProvider because it's not exported */}
         <ErrorReporter />
         <Header />
         <Script
