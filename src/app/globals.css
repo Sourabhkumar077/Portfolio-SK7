@@ -142,9 +142,9 @@ nextjs-portal {
   display: none !important;
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling - disabled in favor of Lenis */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* Custom scrollbar */
