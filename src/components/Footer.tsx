@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Sourabh kumar</h3>
+            <h3 className="font-bold text-md mb-4 bbh-sans-bartle-regular">Sourabh kumar</h3>
             <p className="text-sm text-muted-foreground">
             Turning ideas into code — a Web Developer, Software Engineer, and Computer Science student driven by innovation..
             </p>
@@ -16,7 +16,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-bold text-md mb-4 bbh-sans-bartle-regular">Quick Links</h3>
             <ul className="space-y-2 flex gap-2.5">
               <li>
                 <Link
@@ -47,7 +47,7 @@ export default function Footer() {
 
           {/* Social Links */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Connect</h3>
+            <h3 className="font-bold text-md mb-4 bbh-sans-bartle-regular">Connect</h3>
             <div className="flex space-x-4">
               <a
                 href="https://github.com/Sourabhkumar077"

@@ -116,8 +116,8 @@ export default function ProjectsPage() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">My Projects</h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <h1 className=" bbh-sans-bartle-regular text-4xl md:text-5xl font-bold mb-4">My Projects</h1>
+            <p className=" text-xl text-muted-foreground max-w-2xl mx-auto">
               A collection of web development and software engineering projects
               showcasing my skills and experience.
             </p>

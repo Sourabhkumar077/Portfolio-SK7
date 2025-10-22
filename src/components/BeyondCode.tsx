@@ -28,7 +28,7 @@ export default function BeyondCode() {
     <section className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="x text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
+          <h2 className="bbh-sans-bartle-regular text-4xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
              Beyond Code
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto ">

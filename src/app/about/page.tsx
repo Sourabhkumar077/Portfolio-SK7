@@ -132,7 +132,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16" ref={headerRef}>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">About Me</h1>
+            <h1 className="bbh-sans-bartle-regular text-4xl md:text-5xl font-bold mb-4">About Me</h1>
             <p className="text-xl ">
               Learn more about my background, skills, and journey in tech
             </p>
@@ -142,7 +142,7 @@ export default function AboutPage() {
           <div className="mb-20" ref={introRef}>
             <div className="flex flex-col md:flex-row gap-12 items-center">
               <div className="flex-1 space-y-6">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground">Hello! 👋</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground ">Hello! 👋</h2>
                 <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                   <p>I’m <span className="font-semibold text-foreground">Sourabh Kumar</span> — a calm hustler, a curious mind, and a builder who believes growth isn't a destination, it's a daily practice.</p>
                   <p>
@@ -173,7 +173,7 @@ export default function AboutPage() {
 
           {/* Education */}
           <div className="mb-20" ref={educationRef}>
-            <h2 className="text-3xl font-bold mb-8">Education</h2>
+            <h2 className="text-3xl font-bold mb-8 bbh-sans-bartle-regular">Education</h2>
             {education.map((edu, index) => (
               <div key={index} className="mb-8">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
@@ -191,7 +191,7 @@ export default function AboutPage() {
 
           {/* Skills */}
           <div className="mb-20" ref={skillsRef}>
-            <h2 className="text-3xl font-bold mb-8">Technical Skills</h2>
+            <h2 className="text-3xl font-bold mb-8 bbh-sans-bartle-regular">Technical Skills</h2>
             <div className="flex flex-wrap gap-6 justify-center">
               {skills.map((skill, index) => {
                 const Icon = skill.icon;
@@ -221,7 +221,7 @@ export default function AboutPage() {
 
           {/* Achievements */}
           <div ref={achievementsRef}>
-            <h2 className="text-3xl font-bold mb-8">Achievements</h2>
+            <h2 className="text-3xl font-bold mb-8 bbh-sans-bartle-regular">Achievements</h2>
             <div className="space-y-8">
               {achievements.map((achievement, index) => {
                 const Icon = achievement.icon;
@@ -231,7 +231,7 @@ export default function AboutPage() {
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">{achievement.title}</h3>
+                      <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300 ">{achievement.title}</h3>
                       <p className="text-muted-foreground leading-relaxed">{achievement.description}</p>
                     </div>
                   </div>

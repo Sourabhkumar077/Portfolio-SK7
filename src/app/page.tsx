@@ -178,11 +178,10 @@ export default function Home() {
         />
 
         <div
-          className="max-w-4xl mx-auto text-center relative z-10"
+          className="max-w-10xl mx-auto text-center relative z-10 pb-10"
           ref={heroRef}
         >
         
-
           <h1
             className="text-3xl md:text-7xl lg:text-4xl font-bold mb-6 relative"
             ref={titleRef}
@@ -192,11 +191,14 @@ export default function Home() {
             </span>
 
           </h1>
-          <span className="inline-block text-2xl md:text-5xl lg:text-7xl font-bold text-foreground tracking-tight leading-tight">
-            A FULL-STACK DEVELOPER
-            <span className=" block font-light text-[20px] text-muted-foreground ">and</span>
-            PRODUCT DESIGNER
+          <span className="inline-block text-8xl md:text-4xl lg:text-7xl font-bold text-foreground tracking-tight leading-tight bbh-sans-bartle-regular">
+             FULL &nbsp; STACK DEVELOPER
           </span>
+           <span className=" block font-light text-[20px] text-muted-foreground ">who is </span>
+          {/* <span className=" block font-light text-[20px] text-muted-foreground ">and</span>
+           <span className="inline-block text-3xl md:text-6xl lg:text-5xl font-bold text-foreground tracking-tight leading-tight bbh-sans-bartle-regular">
+             Product designer
+          </span> */}
           <p
             className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed"
             ref={descRef}
@@ -234,7 +236,7 @@ export default function Home() {
       <section className=" py-20 relative overflow-hidden" ref={whatIDoRef}>
         <div className="container mx-auto px-4 lg:px-8">
           <h2
-            className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent"
+            className="bbh-sans-bartle-regular text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent"
             ref={whatIDoTitleRef}
           >
             What I Do
@@ -309,7 +311,7 @@ export default function Home() {
 
         <div className="container mx-auto px-4 lg:px-8">
           <h2
-            className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent bbh-sans-bartle-regular"
             ref={techStackTitleRef}
           >
             Tech Stack

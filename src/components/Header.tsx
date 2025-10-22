@@ -30,13 +30,13 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-light text-primary">
-              <i>Sourabh Kumar</i>
+            <span className="text-2xl font-light text-primary bbh-sans-bartle-regular">
+              <i>Skm</i>
             </span>    
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-6">
+          <div className=" hidden md:flex md:items-center md:space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.href}
