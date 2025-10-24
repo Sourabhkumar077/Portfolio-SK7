@@ -158,9 +158,9 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex-shrink-0">
-                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+                <div className="relative  md:w-80 md:h-80  overflow-hidden shadow-2xl">
                   <Image
-                    src="/dp-img.jpeg"
+                    src="/Sourabh_ProfilePic.jpg"
                     alt="Sourabh Kumar"
                     fill
                     className="object-cover"
