@@ -173,3 +173,26 @@ html {
   font-weight: 400;
   font-style: normal;
 }
+
+/* Red-White Gradient Theme */
+.gradient-red-white {
+  background: linear-gradient(135deg, #ff0000 0%, #ffffff 50%, #ff0000 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient 3s ease infinite;
+}
+.red-white-text {
+  background: linear-gradient(135deg, #fb2020 0%, #ffffff 30%, #ff0000 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-red-white-bg {
+  background: linear-gradient(135deg, #ff0000 0%, #ffffff 50%, #ff0000 100%);
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}

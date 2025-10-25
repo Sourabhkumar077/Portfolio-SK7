@@ -30,8 +30,8 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-light text-primary bbh-sans-bartle-regular">
-              <i>Skm</i>
+            <span className="text-[14px] font-light text-primary bbh-sans-bartle-regular red-white-text">
+              <i>Sourabh kumar</i>
             </span>    
           </Link>
 
@@ -52,7 +52,7 @@ export default function Header() {
             ))}
             <Button size="sm" asChild>
               <a href="/SKM-PersonalResume.pdf" download>
-                <Download className="mr-2 h-4 w-4" />
+                <Download className="mr-2 h-4 w-4 " />
                 Resume
               </a>
             </Button>
