@@ -169,7 +169,7 @@ export default function Home() {
       <AnimatedBackground />
 
       {/* Hero Section with GSAP Animations */}
-      <section className="relative flex-1 container mx-auto px-4 lg:px-8 py-20 md:py-32 overflow-hidden">
+      <section className="relative flex-1 container mx-auto px-4 lg:px-8 py-16 md:py-24 lg:py-32 overflow-hidden">
         {/* Cursor follower effect */}
         <div
           ref={cursorRef}
@@ -178,29 +178,30 @@ export default function Home() {
         />
 
         <div
-          className="max-w-10xl mx-auto text-center relative z-10 pb-10"
+          className="max-w-6xl mx-auto text-center relative z-10 pb-8 md:pb-12"
           ref={heroRef}
         >
-        
+
           <h1
-            className="text-3xl md:text-7xl lg:text-4xl font-bold mb-6 relative"
+            className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 relative"
             ref={titleRef}
           >
-            <span className="inline-block text-[16px] md:text-2xl lg:text-5xl font-light text-muted-foreground ">
-              <i> Hi I'm  Sourabh </i>
+            <span className="inline-block text-sm md:text-lg lg:text-xl font-light text-muted-foreground">
+              <i> Hi I'm Sourabh </i>
             </span>
-
           </h1>
-          <span className="inline-block text-8xl md:text-4xl lg:text-7xl font-bold text-foreground tracking-tight leading-tight bbh-sans-bartle-regular">
+          <span className="inline-block text-4xl md:text-6xl lg:text-8xl font-bold text-foreground tracking-tight leading-tight bbh-sans-bartle-regular">
              FULL &nbsp; STACK DEVELOPER
           </span>
-           <span className=" block font-light text-[20px] text-muted-foreground ">who is </span>
+          <span className="block font-light text-base md:text-lg lg:text-xl text-muted-foreground mt-2 md:mt-4">
+            who is
+          </span>
           {/* <span className=" block font-light text-[20px] text-muted-foreground ">and</span>
            <span className="inline-block text-3xl md:text-6xl lg:text-5xl font-bold text-foreground tracking-tight leading-tight bbh-sans-bartle-regular">
              Product designer
           </span> */}
           <p
-            className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed"
+            className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed mt-4 md:mt-6"
             ref={descRef}
           >
             <i> Building digital experiences that blend logic, design, and emotion.</i>
@@ -226,10 +227,10 @@ export default function Home() {
 
           {/* Scroll indicator */}
           <div className="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-0">
-            
+
           </div>
         </div>
-        
+
       </section>
 
       {/* What I Do Section with GSAP Card Effects */}
