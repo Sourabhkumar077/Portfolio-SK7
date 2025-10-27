@@ -31,8 +31,9 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <span className="text-[14px] font-light text-primary bbh-sans-bartle-regular red-white-text">
-              <i>Sourabh kumar</i>
-            </span>    
+              <i className="md:hidden">SKM</i>
+              <i className="hidden md:inline">Sourabh kumar</i>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -73,14 +74,16 @@ export default function Header() {
         </div>
 
         {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-3">
+        <div className={`absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-primary/10 md:hidden shadow-lg transition-all duration-300 ease-in-out ${
+          mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
+        }`}>
+          <div className="py-4 space-y-3">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block text-sm font-medium transition-colors hover:text-primary ${
+                className={`block text-sm font-medium transition-colors hover:text-primary px-4 ${
                   isActive(item.href)
                     ? "text-primary"
                     : "text-muted-foreground"
@@ -89,14 +92,16 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
-            <Button size="sm" className="w-full" asChild>
-              <a href="/SKM-PersonalResume.pdf" download>
-                <Download className="mr-2 h-4 w-4" />
-                Download Resume
-              </a>
-            </Button>
+            <div className="px-4">
+              <Button size="sm" className="w-full" asChild>
+                <a href="/SKM-PersonalResume.pdf" download>
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Resume
+                </a>
+              </Button>
+            </div>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );

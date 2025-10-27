@@ -196,42 +196,41 @@ export default function Home() {
         >
 
           <h1
-            className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 relative text-left"
+            className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4 relative text-left"
             ref={titleRef}
           >
-            <span className="inline-block text-sm md:text-lg lg:text-xl font-light text-muted-foreground text-left">
-              <i> Hi I'm Sourabh </i>
+            <span className=" inter-regular inline-block text-xs sm:text-sm md:text-lg lg:text-xl font-light text-muted-foreground text-left">
+              <i> Hi I'm Sourabh , a</i>
             </span>
           </h1>
-          <span className=" inline-block text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight leading-tight bbh-sans-bartle-regular  bg-clip-text text-transparent  gradient-red-white">
+          <span className=" inline-block text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight leading-tight bbh-sans-bartle-regular  bg-clip-text text-transparent  gradient-red-white">
              FULL &nbsp; STACK Engineer
           </span>
-          <span className="block font-light text-base md:text-lg lg:text-xl text-muted-foreground mt-4 md:mt-6">
+          {/* <span className="block font-light text-base md:text-lg lg:text-xl text-muted-foreground  md:mt-2">
             who is
-          </span>
+          </span> */}
           <p
-            className="text-base md:text-lg lg:text-xl text-muted-foreground mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed mt-6 md:mt-8"
+            className="inter-regular text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-8 sm:mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed mt-2 md:mt-4"
             ref={descRef}
           >
-            <i> Building digital experiences that blend logic, design, and emotion.</i>
+            <i>I Build digital experiences that blend logic, design, and emotion.</i>
           </p>
 
           <div
             className="flex flex-col sm:flex-row gap-6 justify-center"
             ref={buttonsRef}
           >
-            <Button size="lg" asChild className="group relative overflow-hidden hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25">
+            <Button size="lg" variant="ghost" asChild className="group hover:bg-primary/10 hover:text-primary hover:scale-102 transition-all duration-300 focus:ring-2 focus:ring-primary/50">
               <Link href="/projects">
-                <span className="relative z-10 flex items-center">
+                <span className=" bbh-sans-bartle-regular flex items-center">
                   View My Work
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" /> 
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/50 to-purple-500/50 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500" />
               </Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="backdrop-blur-sm hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:border-purple-500/50">
+            </Button> 
+            {/* <Button size="lg" variant="ghost" asChild className="hover:bg-primary/10 hover:text-primary hover:scale-102 transition-all duration-300 focus:ring-2 focus:ring-primary/50">
               <Link href="/contact">Get In Touch</Link>
-            </Button>
+            </Button> */}
           </div>
 
           {/* Scroll indicator */}
@@ -251,7 +250,7 @@ export default function Home() {
             What I Do
           </h2>
 
-          <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto" ref={cardsRef}>
+          <div className="  grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto" ref={cardsRef}>
             {/* Left Column - Accordion */}
             <div className="space-y-4">
               <Accordion type="single" collapsible className="w-full space-y-4">
@@ -359,11 +358,11 @@ export default function Home() {
       </section>
 
       {/* Tech Stack Section with GSAP Animated Badges */}
-      <section className="py-20 relative overflow-hidden" ref={techStackRef}>
+      <section className=" bbh-sans-bartle-regular py-20 relative overflow-hidden" ref={techStackRef}>
 
         <div className="container mx-auto px-4 lg:px-8">
           <h2
-            className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-red-white bbh-sans-bartle-regular"
+            className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-red-white "
             ref={techStackTitleRef}
           >
             Tech Stack
@@ -386,7 +385,7 @@ export default function Home() {
             ].map((skill, index) => (
               <div
                 key={skill.name}
-                className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:scale-105 hover:-translate-y-1 cursor-pointer shadow-lg hover:shadow-xl"
+                className=" inter-medium group relative overflow-hidden rounded-xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:scale-105 hover:-translate-y-1 cursor-pointer shadow-lg hover:shadow-xl"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                 <div className="relative p-6 flex flex-col items-center text-center">
@@ -404,13 +403,13 @@ export default function Home() {
           </div>
 
           {/* Animated stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mt-20" ref={statsRef}>
+          <div className="inter-regular grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mt-20" ref={statsRef}>
             {[
 
               { icon: Rocket, label: "Projects", value: "20+" },
               { icon: Code, label: "Languages", value: "10+" },
-              { icon: Zap, label: "Experience", value: "1+ Years" },
-              { icon: Sparkles, label: "Happy Clients", value: "15+" },
+              { icon: Zap, label: "Experience", value: "1.5+ Years" },
+              // { icon: Sparkles, label: "Happy Clients", value: "15+" },
             ].map((stat, index) => (
               <div key={index} className="text-center group">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-3 group-hover:rotate-360 transition-transform duration-500">

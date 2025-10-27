@@ -124,7 +124,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-12">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
@@ -147,7 +147,7 @@ export default function ProjectsPage() {
                   </div>
 
                   <CardHeader>
-                    <CardTitle>{project.title}</CardTitle>
+                    <b className="Inter-medium p-4 red-white-text"><CardTitle>{project.title}</CardTitle></b>
                     <CardDescription>{project.description}</CardDescription>
                   </CardHeader>
 
