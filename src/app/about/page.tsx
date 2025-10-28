@@ -7,6 +7,7 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef, useEffect } from "react";
+import TechJourney from "@/components/TechJourney";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -239,6 +240,8 @@ export default function AboutPage() {
               })}
             </div>
           </div>
+
+          <TechJourney/>
         </div>
       </main>
 

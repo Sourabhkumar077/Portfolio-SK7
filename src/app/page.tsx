@@ -11,11 +11,20 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollSmoother from "gsap/ScrollSmoother";
 import { useRef, useEffect, useState } from "react";
-import BeyondCode from "@/components/BeyondCode";
-import TechJourney from "@/components/TechJourney";
-import ProblemSolvingShowcase from "@/components/ProblemSolvingShowcase";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
 import CreativeTextCard from "@/components/CreativeTextCard";
+import dynamic from "next/dynamic";
+
+// Lazy load heavy components
+const BeyondCode = dynamic(() => import("@/components/BeyondCode"), {
+  loading: () => <div className="h-96 flex items-center justify-center">Loading...</div>
+});
+const TechJourney = dynamic(() => import("@/components/TechJourney"), {
+  loading: () => <div className="h-96 flex items-center justify-center">Loading...</div>
+});
+const ProblemSolvingShowcase = dynamic(() => import("@/components/ProblemSolvingShowcase"), {
+  loading: () => <div className="h-96 flex items-center justify-center">Loading...</div>
+});
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -48,15 +57,26 @@ export default function Home() {
 
 
   useEffect(() => {
-    // Hero animations
-    const tl = gsap.timeline();
-    tl.fromTo(badgeRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 })
-      .fromTo(titleRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
-      .fromTo(descRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
-      .fromTo(buttonsRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3");
+    // Throttle scroll events for better performance
+    let ticking = false;
 
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          // Hero animations
+          const tl = gsap.timeline();
+          tl.fromTo(badgeRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 })
+            .fromTo(titleRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
+            .fromTo(descRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
+            .fromTo(buttonsRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3");
 
-    // Scroll animations
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    // Scroll animations with will-change for better performance
     gsap.fromTo(whatIDoTitleRef.current, { opacity: 0, y: 30 }, {
       opacity: 1, y: 0, duration: 0.6, ease: "power2.out",
       scrollTrigger: {
@@ -82,7 +102,6 @@ export default function Home() {
           toggleActions: "play none none reverse"
         }
       });
-
 
     gsap.fromTo(techStackTitleRef.current, { opacity: 0, y: 30 }, {
       opacity: 1, y: 0, duration: 0.6, ease: "power2.out",
@@ -114,53 +133,56 @@ export default function Home() {
       }
     });
 
-    // Floating particles animation
+    // Floating particles animation - reduced frequency
     const particles = document.querySelectorAll('.floating-particle');
     particles.forEach((particle, i) => {
-      gsap.set(particle, { opacity: 0, scale: 0, y: 0 });
+      gsap.set(particle, { opacity: 0, scale: 0, y: 0, willChange: "transform, opacity" });
       gsap.to(particle, {
         opacity: 1,
         scale: 1,
-        y: Math.random() * -200 - 50, // random upward float
-        duration: 6 + Math.random() * 4, // vary speed
+        y: Math.random() * -200 - 50,
+        duration: 8 + Math.random() * 6, // slower animations
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
-        delay: i * 0.3
+        delay: i * 0.5
       });
     });
 
-    // Gradient orbs animation
+    // Gradient orbs animation - reduced complexity
     const orbs = document.querySelectorAll('.gradient-orb');
     orbs.forEach((orb) => {
+      gsap.set(orb, { willChange: "transform" });
       gsap.to(orb, {
-        x: "+=30",
-        y: "-=20",
-        scale: 1.1,
-        rotate: 360,
-        duration: 10 + Math.random() * 5,
+        x: "+=20", // reduced movement
+        y: "-=15",
+        scale: 1.05, // reduced scale
+        rotate: 180, // reduced rotation
+        duration: 15 + Math.random() * 10, // slower
         repeat: -1,
         ease: "sine.inOut",
         yoyo: true
       });
     });
 
-
-    // Scroll indicator animation
+    // Scroll indicator animation - simplified
     const scrollIndicator = document.querySelector('.scroll-indicator');
     if (scrollIndicator) {
-      gsap.set(scrollIndicator, { opacity: 0 });
+      gsap.set(scrollIndicator, { opacity: 0, willChange: "transform, opacity" });
       gsap.to(scrollIndicator, {
         opacity: 1,
-        y: 10,
-        duration: 2,
+        y: 5, // reduced movement
+        duration: 3,
         repeat: -1,
         ease: "power2.inOut",
         yoyo: true
       });
     }
 
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
@@ -200,7 +222,7 @@ export default function Home() {
             ref={titleRef}
           >
             <span className=" inter-regular inline-block text-xs sm:text-sm md:text-lg lg:text-xl font-light text-muted-foreground text-left">
-              <i> Hi I'm Sourabh , a</i>
+              <i> Hi I'm a</i>
             </span>
           </h1>
           <span className=" inline-block text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight leading-tight bbh-sans-bartle-regular  bg-clip-text text-transparent  gradient-red-white">

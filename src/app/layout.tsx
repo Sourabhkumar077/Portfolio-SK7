@@ -11,6 +11,13 @@ import LenisProvider from "@/components/LenisProvider";
 export const metadata: Metadata = {
   title: "Sourabh-kumar | Web Developer & Software Engineer",
   description: "Portfolio of a web developer, software engineer, and computer science student passionate about building innovative solutions.",
+  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
+  openGraph: {
+    title: "Sourabh-kumar | Web Developer & Software Engineer",
+    description: "Portfolio of a web developer, software engineer, and computer science student passionate about building innovative solutions.",
+    type: "website",
+  },
 };
 export default function RootLayout({
   children,
@@ -20,6 +27,21 @@ export default function RootLayout({
   return (
     <LenisProvider>
       <html lang="en" className="dark">
+        <head>
+          <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+          />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap&family=Inter:wght@400;500;600&display=swap"
+            rel="stylesheet"
+          />
+        </head>
         <body className="antialiased">
           <ErrorReporter />
           <Header />

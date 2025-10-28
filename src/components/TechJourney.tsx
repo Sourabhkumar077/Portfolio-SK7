@@ -1,46 +1,59 @@
 import { Badge } from "@/components/ui/badge";
-import { Rocket, Code, Trophy, Target } from "lucide-react";
+import { Rocket, Code, Trophy, Target, Table } from "lucide-react";
 
 const timelineData = [
   {
-    year: "2021",
-    title: "First Line of Code",
-    description: "Wrote my first line of code in C, discovered problem-solving passion.",
+    year: "2023",
+    title: "The Beginning — C++ & Problem Solving",
+    description:
+      "Started my programming journey with C++ during my 2nd year of college. Fell in love with logic building and explored the depths of problem-solving and core CS concepts.",
     icon: Code,
   },
   {
-    year: "2022",
-    title: "Web Basics",
-    description: "Learned web basics (HTML, CSS, JS), built my first static site.",
+    year: "2023-2024",
+    title: "Web Development Kickstart",
+    description:
+      "Discovered web development, mastered frontend fundamentals (HTML, CSS, JavaScript) and built small projects to bring ideas to life on screen.",
     icon: Rocket,
   },
   {
-    year: "2023",
-    title: "MERN Stack Exploration",
-    description: "Explored MERN stack, created full-stack apps with MongoDB, Express, Node.",
+    year: "2024",
+    title: "Leveling Up — Java & DSA",
+    description:
+      "Picked up Java and started my DSA journey. Solved over 500 problems across platforms, sharpening my logic, algorithms, and confidence in structured problem-solving.",
     icon: Target,
   },
   {
-    year: "2024",
-    title: "AI Mental Therapy App",
-    description: "Built 'Zenora' (AI mental therapy app), won a hackathon prize.",
+    year: "2024 - 2025",
+    title: "Backend Mastery",
+    description:
+      "Dove deep into backend using Node.js, Express, and MongoDB. Built impactful projects like 'PrepStack' — a personal placement tracker app, while exploring SQL and deployment workflows.",
+    icon: Table,
+  },
+  {
+    year: "2025",
+    title: "Expanding Horizons — Frontend, Design & Frameworks",
+    description:
+      "Enhanced my UI/UX skills, explored smooth animations, and learned Next.js with TypeScript. Built 'Sensai' — an AI career coach blending web development and artificial intelligence.",
     icon: Trophy,
   },
   {
     year: "2025",
-    title: "Placement Preparation",
-    description: "Preparing for placements, mastering DSA, building impactful projects.",
+    title: "Automation & AI Era",
+    description:
+      "Currently exploring workflow automation with n8n, experimenting with AI agents, and continuously optimizing and shipping projects that merge innovation with real-world impact.",
     icon: Rocket,
   },
 ];
+
 
 export default function TechJourney() {
   return (
     <section className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
-            🚀 My Tech Journey
+          <h2 className="red-white-text bbh-sans-bartle-regular text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
+            My Tech Journey
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A timeline that shows my growth as a developer.
@@ -70,7 +83,7 @@ export default function TechJourney() {
                       <Badge variant="secondary" className="px-3 py-1 text-sm font-semibold">
                         {item.year}
                       </Badge>
-                      <h3 className="text-xl font-semibold text-foreground">
+                      <h3 className="inter-medium red-white-text  text-[15px] font-semibold text-foreground">
                         {item.title}
                       </h3>
                     </div>
@@ -84,11 +97,11 @@ export default function TechJourney() {
           </div>
 
           {/* Footer */}
-          <div className="text-center mt-12">
+          {/* <div className="text-center mt-12">
             <p className="text-muted-foreground italic">
               👉 This journey isn't just about code. It's about growth, curiosity, and building things that matter.
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
