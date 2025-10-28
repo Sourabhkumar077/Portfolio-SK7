@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
@@ -8,10 +9,19 @@ import Header from "@/components/Header";
 import LenisProvider from "@/components/LenisProvider";
 // import { ToastProvider } from "@/hooks/use-toast"; // Removed because it's not exported
 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Sourabh-kumar | Web Developer & Software Engineer",
   description: "Portfolio of a web developer, software engineer, and computer science student passionate about building innovative solutions.",
-  viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   icons: {
     icon: '/favicon.png',
@@ -45,7 +55,7 @@ export default function RootLayout({
             rel="stylesheet"
           />
         </head>
-        <body className="antialiased">
+        <body className={`${inter.variable} antialiased`}>
           <ErrorReporter />
           <Header />
           <Script

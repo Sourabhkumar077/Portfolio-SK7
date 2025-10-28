@@ -25,7 +25,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full  ">
       
-      <nav className="container mx-auto px-4 lg:px-8">
+      <nav className="container mx-auto px-4 lg:px-4">
         <div className="absolute inset-0   pointer-events-none" />
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -52,8 +52,8 @@ export default function Header() {
               </Link>
             ))}
             <Button size="sm" asChild>
-              <a href="/SKM-PersonalResume.pdf" download>
-                <Download className="mr-2 h-4 w-4 " />
+              <a href="/SKM-PersonalResume.pdf">
+                {/* <Download className="mr-2 h-4 w-4 " /> */}
                 Resume
               </a>
             </Button>
