@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   description: "Portfolio of a web developer, software engineer, and computer science student passionate about building innovative solutions.",
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
+  icons: {
+    icon: '/favicon.png',
+  },
   openGraph: {
     title: "Sourabh-kumar | Web Developer & Software Engineer",
     description: "Portfolio of a web developer, software engineer, and computer science student passionate about building innovative solutions.",
