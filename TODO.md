@@ -1,11 +1,10 @@
-- [ ] Enable Code Splitting and Lazy Loading: Lazy load heavy components like ProblemSolvingShowcase, BeyondCode, TechJourney in src/app/page.tsx
-- [ ] Optimize Images: Use Next.js Image component with proper sizing and formats in components
-- [ ] Reduce Bundle Size: Remove unused dependencies, tree-shake where possible in package.json
-- [ ] Animation Optimization: Debounce or reduce heavy GSAP animations, use will-change for better performance in src/app/page.tsx
-- [ ] Font Optimization: Preload fonts, use font-display: swap in src/app/layout.tsx and globals.css
-- [ ] Caching and Compression: Add headers in next.config.ts for static assets
-- [ ] Static Generation: Ensure pages are statically generated where possible in next.config.ts
-- [ ] Minimize Render Blocking: Move scripts to afterInteractive in layout.tsx
-- [ ] Run build and analyze bundle size
-- [ ] Test load times with Lighthouse
-- [ ] Verify animations still work smoothly
+# TODO: Enhance Tech Journey Section with Floating Elements
+
+## Tasks
+- [x] Import Framer Motion in TechJourney.tsx
+- [x] Add floating animation to timeline items using motion.div
+- [x] Create floating particles/icons around the timeline
+- [x] Enhance card styling with dynamic shadows and hover effects
+- [x] Add subtle background floating elements
+- [x] Test animations and responsiveness
+- [x] Update globals.css if needed for new animations

@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Rocket, Code, Trophy, Target, Table } from "lucide-react";
+import { motion } from "framer-motion";
 
 const timelineData = [
   {
@@ -49,50 +50,95 @@ const timelineData = [
 
 export default function TechJourney() {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="mt-10 py-20 relative overflow-hidden">
+
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <h2 className="red-white-text bbh-sans-bartle-regular text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
             My Tech Journey
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A timeline that shows my growth as a developer.
           </p>
-        </div>
+        </motion.div>
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/20"></div>
+            <motion.div
+              className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/20"
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+            ></motion.div>
 
             {timelineData.map((item, index) => (
-              <div key={index} className="relative flex items-start mb-12 last:mb-0">
+              <motion.div
+                key={index}
+                className="relative flex items-start mb-12 last:mb-0"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
                 {/* Timeline dot */}
-                <div className="relative z-10 flex-shrink-0">
+                <motion.div
+                  className="relative z-10 flex-shrink-0"
+                >
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary/20">
-                    <item.icon className="w-8 h-8 text-primary" />
+                    <motion.div
+                      animate={{
+                        y: [0, -5, 0],
+                      }}
+                      transition={{
+                        duration: 2 + index * 0.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <item.icon className="w-8 h-8 text-primary" />
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Content */}
-                <div className="ml-8 flex-1">
-                  <div className="relative bg-card/50 backdrop-blur-sm border-l-4 border-primary/20 hover:border-primary/40 transition-all duration-300 rounded-r-lg p-6 shadow-lg">
+                <motion.div
+                  className="ml-8 flex-1"
+                >
+                  <motion.div
+                    className="relative bg-card/50 backdrop-blur-sm border-l-4 border-primary/20 hover:border-primary/40 rounded-r-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300"
+                    animate={{
+                      y: [0, -3, 0],
+                    }}
+                    transition={{
+                      duration: 4 + index * 0.3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
                     {/* Speech bubble tail */}
                     <div className="absolute left-0 top-4 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-r-primary/20 transform -translate-x-full"></div>
                     <div className="flex items-center gap-4 mb-3">
                       <Badge variant="secondary" className="px-3 py-1 text-sm font-semibold">
                         {item.year}
                       </Badge>
-                      <h3 className="inter-medium red-white-text  text-[15px] font-semibold text-foreground">
+                      <h3 className="inter-medium red-white-text text-[15px] font-semibold text-foreground">
                         {item.title}
                       </h3>
                     </div>
                     <p className="text-muted-foreground leading-relaxed">
                       {item.description}
                     </p>
-                  </div>
-                </div>
-              </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
 
