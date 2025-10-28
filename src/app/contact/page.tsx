@@ -46,12 +46,12 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen inter-regular">
         <main className="flex-1 container mx-auto px-4 lg:px-8 py-20">
           <div className="max-w-5xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 bbh-sans-bartle-regular gradient-red-white">Get In Touch</h1>
               <p className="text-xl text-muted-foreground">
                 Have a question or want to work together? I'd love to hear from you.
               </p>
@@ -141,7 +141,7 @@ export default function ContactPage() {
                           href="mailto:contact@example.com"
                           className="text-sm text-muted-foreground hover:text-primary"
                         >
-                          contact@example.com
+                          sourabhmahuvar@gmail.com
                         </a>
                       </div>
                     </div>
@@ -151,7 +151,7 @@ export default function ContactPage() {
                       <div>
                         <p className="font-medium">Location</p>
                         <p className="text-sm text-muted-foreground">
-                          City, Country
+                          Narmadapuram , Madhya pradesh
                         </p>
                       </div>
                     </div>
@@ -174,7 +174,7 @@ export default function ContactPage() {
                     </a>
                     
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/sourabh-kumar-mahuvar-b62404253"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors"
@@ -184,7 +184,7 @@ export default function ContactPage() {
                     </a>
                     
                     <a
-                      href="https://twitter.com"
+                      href="https://x.com/SourabhKumar077"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors"

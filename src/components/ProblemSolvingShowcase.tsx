@@ -32,7 +32,7 @@ export default function ProblemSolvingShowcase() {
   };
 
   return (
-    <section className="py-20  relative overflow-hidden">
+    <section className="inter-regular py-20  relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="red-white-text bbh-sans-bartle-regular text-3xl md:text-4xl  mb-4 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">

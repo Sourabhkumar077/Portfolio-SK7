@@ -189,7 +189,7 @@ export default function Home() {
 
   return (
 
-    <div className="relative flex flex-col min-h-screen overflow-hidden" ref={containerRef}>
+    <div className="inter-regular relative flex flex-col min-h-screen overflow-hidden" ref={containerRef}>
       <AnimatedBackground />
 
       {/* Hero Section with GSAP Animations */}
@@ -407,7 +407,7 @@ export default function Home() {
             ].map((skill, index) => (
               <div
                 key={skill.name}
-                className=" inter-medium group relative overflow-hidden rounded-xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:scale-105 hover:-translate-y-1 cursor-pointer shadow-lg hover:shadow-xl"
+                className=" inter-medium group relative overflow-hidden rounded-xl  backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:scale-105 hover:-translate-y-1 cursor-pointer shadow-lg hover:shadow-xl"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                 <div className="relative p-6 flex flex-col items-center text-center">
