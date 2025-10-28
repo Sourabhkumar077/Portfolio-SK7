@@ -1,10 +1,4 @@
-# TODO: Enhance Tech Journey Section with Floating Elements
+# TODO: Remove Background Boxes from Tech Stack Section
 
-## Tasks
-- [x] Import Framer Motion in TechJourney.tsx
-- [x] Add floating animation to timeline items using motion.div
-- [x] Create floating particles/icons around the timeline
-- [x] Enhance card styling with dynamic shadows and hover effects
-- [x] Add subtle background floating elements
-- [x] Test animations and responsiveness
-- [x] Update globals.css if needed for new animations
+- [x] Modify the skills section in src/app/about/page.tsx to remove the background boxes (p-4, rounded-lg, hover:bg-primary/5) and keep only the skill icons, names, progress bars, and levels.
+- [x] Ensure the layout remains clean and readable without the boxes.

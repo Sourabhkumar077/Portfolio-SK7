@@ -113,7 +113,7 @@ export default function TechJourney() {
                   className="ml-8 flex-1"
                 >
                   <motion.div
-                    className="relative bg-card/50 backdrop-blur-sm border-l-4 border-primary/20 hover:border-primary/40 rounded-r-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300"
+                    className="relative"
                     animate={{
                       y: [0, -3, 0],
                     }}

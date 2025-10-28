@@ -199,7 +199,7 @@ export default function AboutPage() {
                 return (
                   <div
                     key={skill.name}
-                    className="group flex flex-col items-center text-center p-4 rounded-lg hover:bg-primary/5 transition-colors duration-300"
+                    className="group flex flex-col items-center text-center"
                   >
                     <div className="h-16 w-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-3 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                       <Icon className="h-8 w-8 text-primary" />

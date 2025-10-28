@@ -25,7 +25,7 @@ const personalPoints = [
 
 export default function BeyondCode() {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="inter-regular py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="red-white-text bbh-sans-bartle-regular text-4xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
@@ -38,10 +38,31 @@ export default function BeyondCode() {
         <br />
         <br />
 
-        <div className="relative max-w-4xl mx-auto h-96 md:h-[500px]">
+        {/* Mobile Layout */}
+        <div className="md:hidden flex flex-col space-y-6 max-w-2xl mx-auto">
+          {personalPoints.map((point, index) => (
+            <div
+              key={index}
+              className="bg-card/20 backdrop-blur-sm border rounded-lg p-4 text-center hover:border-primary/30 transition-all duration-300 hover:scale-105 shadow-lg"
+            >
+              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                <point.icon className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
+                {point.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {point.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden md:block relative max-w-4xl mx-auto h-96 md:h-[500px]">
           {/* Central hub */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div className="w-24 h-34 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary/20">
+            <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary/20">
               <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full flex items-center justify-center">
                 <span className="text-2xl">🌟</span>
               </div>
@@ -64,7 +85,7 @@ export default function BeyondCode() {
                   transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
                 }}
               >
-                <div className="bg-card/20 backdrop-blur-sm border  rounded-lg p-4 w-48 text-center hover:border-primary/30 transition-all duration-300 hover:scale-105 shadow-lg">
+                <div className="bg-card/20 backdrop-blur-sm border rounded-lg p-4 w-48 text-center hover:border-primary/30 transition-all duration-300 hover:scale-105 shadow-lg">
                   <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
                     <point.icon className="h-6 w-6 text-primary" />
                   </div>
