@@ -425,7 +425,7 @@ export default function Home() {
           </div>
 
           {/* Animated stats */}
-          <div className="inter-regular grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mt-20" ref={statsRef}>
+          <div className="inter-regular grid grid-cols-3 md:grid-cols-4 gap-8 max-w-4xl mx-auto mt-20" ref={statsRef}>
             {[
 
               { icon: Rocket, label: "Projects", value: "20+" },
