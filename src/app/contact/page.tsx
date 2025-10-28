@@ -8,8 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Github, Linkedin, Mail, MapPin, Twitter } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import { ToastProvider } from "@/components/ToastProvider";
+import { useToast } from "@/components/ToastProvider";
 
 export default function ContactPage() {
   const { toast } = useToast();
@@ -47,8 +46,7 @@ export default function ContactPage() {
   };
 
   return (
-    <ToastProvider>
-      <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen">
         <main className="flex-1 container mx-auto px-4 lg:px-8 py-20">
           <div className="max-w-5xl mx-auto">
             {/* Header */}
@@ -203,6 +201,5 @@ export default function ContactPage() {
 
         <Footer />
       </div>
-    </ToastProvider>
   );
 }
